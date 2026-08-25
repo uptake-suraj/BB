@@ -6,14 +6,12 @@ import Footer from '@/components/footer';
 import FranchiseModal from '@/components/interactive/franchise-modal';
 import LenisProvider from '@/components/lenis-provider';
 import SeoSchema from '@/components/seo-schema';
-import SplashScreen from '@/components/interactive/splash-screen';
 
 export default function Providers({ children }) {
   const [isFranchiseModalOpen, setIsFranchiseModalOpen] = useState(false);
 
   return (
     <LenisProvider>
-      <SplashScreen />
       <SeoSchema />
       <Navbar onOpenFranchiseModal={() => setIsFranchiseModalOpen(true)} />
       <main className="flex-grow">{children}</main>
