@@ -6,15 +6,16 @@ import Image from 'next/image';
 export default function BrandLogo({ className = "w-12 h-12 sm:w-14 sm:h-14", showText = false, textLayout = "horizontal", darkText = false }) {
   return (
     <div className="flex items-center gap-2.5 sm:gap-3 group cursor-pointer">
-      {/* Mascot Logo Badge (HD Circular Badge) */}
+      {/* Mascot Logo Badge (Uncompressed Crisp HD Circular Badge) */}
       <div className={`relative flex-shrink-0 ${className} transition-transform duration-300 group-hover:scale-105`}>
-        <div className="relative w-full h-full rounded-full bg-white p-0.5 sm:p-1 shadow-[0_4px_15px_rgba(255,107,0,0.2)] border-2 border-baba-orange overflow-hidden flex items-center justify-center">
+        <div className="relative w-full h-full rounded-full bg-white p-0.5 sm:p-1 overflow-hidden flex items-center justify-center">
           <Image
             src="/official_logo.png"
             alt="The Burger Baba Official Logo"
-            width={240}
-            height={240}
+            width={280}
+            height={280}
             className="w-full h-full object-contain"
+            unoptimized={true}
             priority
           />
         </div>

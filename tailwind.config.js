@@ -25,9 +25,10 @@ module.exports = {
         }
       },
       fontFamily: {
-        sans: ['var(--font-outfit)', 'sans-serif'],
-        display: ['var(--font-jakarta)', 'sans-serif'],
-        title: ['var(--font-bebas)', 'sans-serif'],
+        sans: ['Poppins', 'var(--font-poppins)', 'sans-serif'],
+        display: ['Poppins', 'var(--font-poppins)', 'sans-serif'],
+        title: ['Poppins', 'var(--font-poppins)', 'sans-serif'],
+        mono: ['Poppins', 'var(--font-poppins)', 'sans-serif'],
       },
       maxWidth: {
         'site': '1440px',

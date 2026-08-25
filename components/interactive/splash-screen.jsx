@@ -15,7 +15,7 @@ export default function SplashScreen() {
         setIsVisible(true);
 
         const startTime = Date.now();
-        const duration = 1200; // 1.2s total loading progress time from 1% to 100%
+        const duration = 1900; // Increased splash time (~1.9s) for smooth 1% to 100% progress line
 
         const interval = setInterval(() => {
           const elapsed = Date.now() - startTime;
@@ -30,7 +30,7 @@ export default function SplashScreen() {
             setTimeout(() => {
               setIsVisible(false);
               sessionStorage.setItem('baba_splash_seen', 'true');
-            }, 250);
+            }, 300);
           }
         }, 20);
 
@@ -55,7 +55,7 @@ export default function SplashScreen() {
         <motion.div
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, scale: 1.02 }}
-          transition={{ duration: 0.35, ease: 'easeOut' }}
+          transition={{ duration: 0.4, ease: 'easeOut' }}
           className="fixed inset-0 z-[9999] bg-[#FAF9F5] flex flex-col items-center justify-center select-none pointer-events-none"
         >
           {/* Subtle Ambient Radial Glow */}
@@ -91,7 +91,7 @@ export default function SplashScreen() {
                 />
               </svg>
 
-              {/* Centered Original Clean HD Logo Image */}
+              {/* Centered Original Clean HD Logo Image (Unoptimized for Maximum Resolution) */}
               <div className="absolute inset-[18px] rounded-full bg-white p-2.5 shadow-md border border-baba-border overflow-hidden flex items-center justify-center">
                 <Image
                   src="/official_logo.png"
@@ -99,6 +99,7 @@ export default function SplashScreen() {
                   width={220}
                   height={220}
                   className="w-full h-full object-contain"
+                  unoptimized={true}
                   priority
                 />
               </div>

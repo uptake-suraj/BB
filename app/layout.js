@@ -1,23 +1,11 @@
-import { Outfit, Plus_Jakarta_Sans, Bebas_Neue } from 'next/font/google';
+import { Poppins } from 'next/font/google';
 import './globals.css';
 import Providers from '@/components/providers';
 
-const outfit = Outfit({
+const poppins = Poppins({
+  weight: ['400', '500', '600', '700'],
   subsets: ['latin'],
-  variable: '--font-outfit',
-  display: 'swap',
-});
-
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  variable: '--font-jakarta',
-  display: 'swap',
-});
-
-const bebas = Bebas_Neue({
-  weight: '400',
-  subsets: ['latin'],
-  variable: '--font-bebas',
+  variable: '--font-poppins',
   display: 'swap',
 });
 
@@ -60,8 +48,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${outfit.variable} ${jakarta.variable} ${bebas.variable}`}>
-      <body className="min-h-screen bg-baba-bg text-baba-black flex flex-col antialiased">
+    <html lang="en" className={poppins.variable}>
+      <body className="min-h-screen bg-baba-bg text-baba-black flex flex-col antialiased font-sans">
         <Providers>{children}</Providers>
       </body>
     </html>

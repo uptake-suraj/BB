@@ -120,13 +120,14 @@ export default function HomeView() {
 
                   <div className="relative z-10 space-y-4 sm:space-y-6">
                     {/* Official Uploaded Logo Image */}
-                    <div className="relative w-32 h-32 sm:w-44 sm:h-44 mx-auto rounded-full bg-white p-2 shadow-lg border-2 border-baba-orange overflow-hidden animate-float">
+                    <div className="relative w-32 h-32 sm:w-44 sm:h-44 mx-auto rounded-full bg-white p-2 shadow-lg border-2 overflow-hidden animate-float">
                       <Image
                         src="/official_logo.png"
                         alt="The Burger Baba Official Logo"
                         width={220}
                         height={220}
                         className="w-full h-full object-contain"
+                        unoptimized={true}
                         priority
                       />
                     </div>
