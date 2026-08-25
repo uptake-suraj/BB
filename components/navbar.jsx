@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import BrandLogo from './brand-logo';
 import TypewriterText from '@/components/interactive/typewriter-text';
-import { Menu, X, PhoneCall, ChevronRight, Sparkles } from 'lucide-react';
+import { Menu, X, PhoneCall, ChevronRight, Sparkles, MapPin } from 'lucide-react';
 
 export default function Navbar({ onOpenFranchiseModal }) {
   const [scrolled, setScrolled] = useState(false);
@@ -19,6 +19,18 @@ export default function Navbar({ onOpenFranchiseModal }) {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Lock body scroll when mobile menu is open to prevent page bleed
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
 
   const navLinks = [
     { name: 'Home', href: '/' },
@@ -91,29 +103,50 @@ export default function Navbar({ onOpenFranchiseModal }) {
               className="relative group overflow-hidden rounded-full p-[1px] focus:outline-none"
             >
               <span className="absolute inset-0 bg-gradient-to-r from-baba-orange via-amber-500 to-baba-orange rounded-full animate-spin-slow opacity-90 group-hover:opacity-100 transition"></span>
-              <span className="relative flex items-center gap-1.5 sm:gap-2 bg-baba-orange px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs font-semibold text-white transition group-hover:bg-baba-orange-dark font-sans uppercase tracking-wider shadow-glow-orange">
+              <span className="relative flex items-center gap-1.5 sm:gap-2 bg-baba-orange px-3.5 sm:px-6 py-2 sm:py-2.5 rounded-full text-xs font-semibold text-white transition group-hover:bg-baba-orange-dark font-sans uppercase tracking-wider shadow-glow-orange">
                 <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
-                <span className="text-[11px] sm:text-xs font-bold">Franchise Enquiry</span>
+                <span className="text-[10px] sm:text-xs font-bold">Franchise Enquiry</span>
                 <ChevronRight className="hidden sm:inline w-3.5 h-3.5 group-hover:translate-x-0.5 transition" />
               </span>
             </button>
 
             {/* Mobile Menu Button */}
             <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-xl bg-baba-lightgray border border-baba-border text-baba-black hover:bg-baba-orange hover:text-white transition"
-              aria-label="Toggle Navigation Menu"
+              onClick={() => setMobileMenuOpen(true)}
+              className="lg:hidden p-2.5 rounded-2xl bg-baba-lightgray border border-baba-border text-baba-black hover:bg-baba-orange hover:text-white transition flex items-center justify-center"
+              aria-label="Open Navigation Menu"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              <Menu className="w-5 h-5" />
             </button>
           </div>
         </div>
       </header>
 
-      {/* Mobile Navigation Drawer */}
+      {/* Full-Screen Mobile Navigation Overlay (100% Solid Solid BG, Perfect Alignment) */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 lg:hidden bg-white/98 backdrop-blur-2xl flex flex-col pt-20 px-5 pb-8 border-t border-baba-border animate-fadeIn overflow-y-auto">
-          <div className="flex flex-col gap-2 mt-4">
+        <div className="fixed inset-0 z-[100] lg:hidden bg-baba-bg flex flex-col justify-between p-5 sm:p-6 overflow-y-auto animate-fadeIn select-none">
+          
+          {/* Top Bar inside Mobile Drawer */}
+          <div className="flex items-center justify-between pb-4 border-b border-baba-border/80">
+            <Link href="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center gap-2">
+              <BrandLogo className="w-12 h-12" showText={false} />
+              <div className="flex flex-col">
+                <span className="text-xl font-title text-baba-black uppercase">THE BURGER <span className="text-baba-orange">BABA</span></span>
+                <span className="text-[9px] font-mono text-baba-orange font-semibold tracking-wider">WE BELIEVE IN QUALITY</span>
+              </div>
+            </Link>
+
+            <button
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-10 h-10 rounded-full bg-white border border-baba-border text-baba-black hover:bg-baba-orange hover:text-white transition flex items-center justify-center shadow-xs"
+              aria-label="Close Navigation Menu"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
+
+          {/* Navigation Links List */}
+          <div className="flex flex-col gap-2.5 my-auto py-6">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
               return (
@@ -124,36 +157,41 @@ export default function Navbar({ onOpenFranchiseModal }) {
                   className={`flex items-center justify-between px-5 py-3.5 rounded-2xl text-sm font-semibold transition-all ${
                     isActive
                       ? 'bg-baba-orange text-white shadow-glow-orange'
-                      : 'bg-baba-lightgray text-baba-black hover:bg-baba-border'
+                      : 'bg-white border border-baba-border/80 text-baba-black hover:border-baba-orange shadow-xs'
                   }`}
                 >
-                  <span>{link.name}</span>
-                  <ChevronRight className="w-4 h-4 opacity-70" />
+                  <span className="font-sans">{link.name}</span>
+                  <ChevronRight className={`w-4 h-4 ${isActive ? 'text-white' : 'text-baba-orange'}`} />
                 </Link>
               );
             })}
           </div>
 
-          <div className="mt-6 pt-6 border-t border-baba-border flex flex-col gap-4">
+          {/* Bottom Action Footer */}
+          <div className="pt-4 border-t border-baba-border/80 flex flex-col gap-4">
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
                 if (onOpenFranchiseModal) onOpenFranchiseModal();
               }}
-              className="w-full py-3.5 rounded-2xl bg-baba-orange text-white font-semibold text-center shadow-glow-orange flex items-center justify-center gap-2 font-sans uppercase tracking-wider text-xs"
+              className="w-full py-3.5 rounded-2xl bg-baba-orange hover:bg-baba-orange-dark text-white font-semibold text-center shadow-glow-orange flex items-center justify-center gap-2 font-sans uppercase tracking-wider text-xs"
             >
               <Sparkles className="w-4 h-4" />
               <span>Apply For Franchise</span>
             </button>
 
-            <div className="bg-baba-lightgray p-4 rounded-2xl border border-baba-border text-xs text-baba-gray space-y-1">
-              <div className="text-baba-black font-semibold">Corporate Office:</div>
-              <div className="font-normal text-[11px] leading-relaxed">
+            <div className="bg-white p-4 rounded-2xl border border-baba-border text-xs text-baba-gray space-y-1 shadow-xs">
+              <div className="text-baba-black font-semibold flex items-center gap-1.5">
+                <MapPin className="w-3.5 h-3.5 text-baba-orange" />
+                <span>Corporate HQ Office:</span>
+              </div>
+              <div className="font-normal text-[11px] leading-relaxed text-baba-gray pl-5">
                 F-36, 37, Saket Business Hub, Opp. Domino's Pizza, Radhanpur Road, Mehsana
               </div>
-              <div className="pt-2 text-baba-orange font-mono font-semibold text-xs">+91 8866208063</div>
+              <div className="pt-1.5 pl-5 text-baba-orange font-mono font-semibold text-xs">+91 8866208063</div>
             </div>
           </div>
+
         </div>
       )}
     </>
