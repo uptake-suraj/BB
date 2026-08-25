@@ -1,0 +1,69 @@
+import { Outfit, Plus_Jakarta_Sans, Bebas_Neue } from 'next/font/google';
+import './globals.css';
+import Providers from '@/components/providers';
+
+const outfit = Outfit({
+  subsets: ['latin'],
+  variable: '--font-outfit',
+  display: 'swap',
+});
+
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  variable: '--font-jakarta',
+  display: 'swap',
+});
+
+const bebas = Bebas_Neue({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-bebas',
+  display: 'swap',
+});
+
+export const metadata = {
+  metadataBase: new URL('https://theburgerbaba.com'),
+  title: 'The Burger Baba | Fast Food Franchise & Vegetarian QSR Opportunities',
+  description:
+    'Official Website of The Burger Baba (The Burger Baba Pvt. Ltd.). Explore high-ROI vegetarian QSR food franchise models (Silver, Gold, Platinum) with 100+ menu items.',
+  keywords: [
+    'The Burger Baba',
+    'Burger Franchise India',
+    'QSR Franchise Gujarat',
+    'Food Franchise Mehsana',
+    'Fast Food Franchise Opportunity',
+    'Vegetarian QSR Franchise',
+  ],
+  authors: [{ name: 'The Burger Baba Pvt. Ltd.' }],
+  openGraph: {
+    title: 'The Burger Baba | Premium Vegetarian QSR Franchise',
+    description:
+      'WE BELIEVE IN QUALITY. Expand your business with India’s fastest growing vegetarian burger and fast-food franchise.',
+    url: 'https://theburgerbaba.com',
+    siteName: 'The Burger Baba',
+    images: [
+      {
+        url: '/official_logo.png',
+        width: 800,
+        height: 800,
+        alt: 'The Burger Baba Official Logo',
+      },
+    ],
+    type: 'website',
+  },
+  icons: {
+    icon: '/official_logo.png',
+    shortcut: '/official_logo.png',
+    apple: '/official_logo.png',
+  },
+};
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="en" className={`${outfit.variable} ${jakarta.variable} ${bebas.variable}`}>
+      <body className="min-h-screen bg-baba-bg text-baba-black flex flex-col antialiased">
+        <Providers>{children}</Providers>
+      </body>
+    </html>
+  );
+}
