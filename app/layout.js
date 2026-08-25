@@ -25,7 +25,7 @@ export const metadata = {
   metadataBase: new URL('https://theburgerbaba.com'),
   title: 'The Burger Baba | Fast Food Franchise & Vegetarian QSR Opportunities',
   description:
-    'Official Website of The Burger Baba (The Burger Baba Pvt. Ltd.). Explore high-ROI vegetarian QSR food franchise models (Silver, Gold, Platinum) with 100+ menu items.',
+    'Official Website of The Burger Baba. Explore high-ROI vegetarian QSR food franchise models (Silver, Gold, Platinum) with 100+ menu items.',
   keywords: [
     'The Burger Baba',
     'Burger Franchise India',
@@ -34,7 +34,7 @@ export const metadata = {
     'Fast Food Franchise Opportunity',
     'Vegetarian QSR Franchise',
   ],
-  authors: [{ name: 'The Burger Baba Pvt. Ltd.' }],
+  authors: [{ name: 'The Burger Baba' }],
   openGraph: {
     title: 'The Burger Baba | Premium Vegetarian QSR Franchise',
     description:

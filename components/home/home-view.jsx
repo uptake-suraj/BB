@@ -231,6 +231,11 @@ export default function HomeView() {
                     <div className={`text-xl sm:text-2xl font-bold font-mono mt-0.5 ${model.isPopular ? 'text-baba-black' : 'text-baba-orange'}`}>
                       {model.fee}
                     </div>
+                    {model.feeSub && (
+                      <div className="text-[10px] text-baba-orange font-mono font-semibold mt-1">
+                        {model.feeSub}
+                      </div>
+                    )}
                   </div>
 
                   <ul className="space-y-2 text-xs font-normal text-baba-gray">

@@ -11,7 +11,8 @@ export const BUSINESS_MODELS = [
     badge: 'Compact QSR Format',
     modelNo: 'Model 01',
     size: 'Approx. 300–450 sq.ft.',
-    fee: '₹6.51 Lakh + GST',
+    fee: '₹ 6.XX Lakhs + GST',
+    feeSub: 'Confidential Fee • Enquire For Best Price',
     feeValue: 651000,
     features: [
       'Ideal for High-Footfall Express Outlets',
@@ -26,7 +27,8 @@ export const BUSINESS_MODELS = [
     badgeTop: 'Most Popular Choice',
     modelNo: 'Model 02',
     size: 'Approx. 500–750 sq.ft.',
-    fee: '₹8.51 Lakh + GST',
+    fee: '₹ 8.XX Lakhs + GST',
+    feeSub: 'Confidential Fee • Enquire For Best Price',
     feeValue: 851000,
     isPopular: true,
     features: [
@@ -41,7 +43,8 @@ export const BUSINESS_MODELS = [
     badge: 'Flagship Lounge Format',
     modelNo: 'Model 03',
     size: 'Approx. 800–1,000 sq.ft.',
-    fee: '₹12.50 Lakh + GST',
+    fee: '₹ 12.XX Lakhs + GST',
+    feeSub: 'Confidential Fee • Enquire For Best Price',
     feeValue: 1250000,
     features: [
       'Premium Flagship Experience',

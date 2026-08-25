@@ -18,7 +18,7 @@ export default function Footer({ onOpenFranchiseModal }) {
           <div className="lg:col-span-2 space-y-5 sm:space-y-6">
             <BrandLogo className="w-14 h-14 sm:w-16 sm:h-16" darkText={true} />
             <p className="text-xs sm:text-sm font-normal text-gray-300 leading-relaxed max-w-sm">
-              <strong className="font-semibold text-white">THE BURGER BABA</strong> (The Burger Baba Pvt. Ltd.) is a premium vegetarian QSR and fast-food franchise company built on Indian taste preferences, operational excellence, and standardized scalability.
+              <strong className="font-semibold text-white">THE BURGER BABA</strong> is a premium vegetarian QSR and fast-food franchise company built on Indian taste preferences, operational excellence, and standardized scalability.
             </p>
 
             <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 pt-1">
@@ -86,19 +86,19 @@ export default function Footer({ onOpenFranchiseModal }) {
                 <div className="text-white font-semibold group-hover:text-baba-orange transition">
                   QSR / Silver Model
                 </div>
-                <div className="text-gray-400 font-mono font-normal">300–450 sq.ft • ₹6.51L + GST</div>
+                <div className="text-gray-400 font-mono font-normal">300–450 sq.ft • ₹ 6.XX Lakhs + GST</div>
               </li>
               <li className="bg-white/5 p-3 rounded-xl border border-white/10 hover:border-baba-orange transition group">
                 <div className="text-white font-semibold group-hover:text-baba-orange transition">
                   Café / Gold Model
                 </div>
-                <div className="text-gray-400 font-mono font-normal">500–750 sq.ft • ₹8.51L + GST</div>
+                <div className="text-gray-400 font-mono font-normal">500–750 sq.ft • ₹ 8.XX Lakhs + GST</div>
               </li>
               <li className="bg-white/5 p-3 rounded-xl border border-white/10 hover:border-baba-orange transition group">
                 <div className="text-white font-semibold group-hover:text-baba-orange transition">
                   Lounge / Platinum
                 </div>
-                <div className="text-gray-400 font-mono font-normal">800–1,000 sq.ft • ₹12.50L + GST</div>
+                <div className="text-gray-400 font-mono font-normal">800–1,000 sq.ft • ₹ 12.XX Lakhs + GST</div>
               </li>
             </ul>
           </div>
@@ -154,7 +154,7 @@ export default function Footer({ onOpenFranchiseModal }) {
         {/* Bottom Bar & Disclaimer - 100% Mobile Responsive City Wrap */}
         <div className="pt-6 sm:pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-400 font-normal text-center md:text-left">
           <div>
-            © {new Date().getFullYear()} <strong className="font-semibold text-white">The Burger Baba Pvt. Ltd.</strong> All rights reserved.
+            © {new Date().getFullYear()} <strong className="font-semibold text-white">The Burger Baba</strong>. All rights reserved.
           </div>
 
           {/* Responsive Wrap City Names */}

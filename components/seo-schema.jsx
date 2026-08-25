@@ -9,9 +9,9 @@ export default function SeoSchema() {
       {
         '@type': 'Organization',
         '@id': 'https://theburgerbaba.com/#organization',
-        name: 'The Burger Baba Pvt. Ltd.',
+        name: 'The Burger Baba',
         url: 'https://theburgerbaba.com',
-        logo: 'https://theburgerbaba.com/burger_baba_logo.jpg',
+        logo: 'https://theburgerbaba.com/official_logo.png',
         description:
           'The Burger Baba is a premium vegetarian QSR and fast food franchise brand in India providing high-ROI franchise business opportunities.',
         founder: {
@@ -61,7 +61,6 @@ export default function SeoSchema() {
           '@type': 'Offer',
           category: 'Franchise Business Opportunity',
           priceCurrency: 'INR',
-          price: '651000',
         },
       },
     ],

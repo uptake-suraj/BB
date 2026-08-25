@@ -135,13 +135,13 @@ export default function FranchiseModal({ isOpen, onClose }) {
                   className="w-full bg-baba-bg border border-baba-border rounded-xl px-4 py-3 text-sm text-baba-black focus:outline-none focus:border-baba-orange font-medium"
                 >
                   <option value="QSR / Silver Model (300-450 sq.ft)">
-                    QSR / Silver Model (300-450 sq.ft • ₹6.51L + GST)
+                    QSR / Silver Model (300-450 sq.ft • Confidential Fee)
                   </option>
                   <option value="Café / Gold Model (500-750 sq.ft)">
-                    Café / Gold Model (500-750 sq.ft • ₹8.51L + GST)
+                    Café / Gold Model (500-750 sq.ft • Confidential Fee)
                   </option>
                   <option value="Lounge / Platinum Model (800-1000 sq.ft)">
-                    Lounge / Platinum Model (800-1,000 sq.ft • ₹12.50L + GST)
+                    Lounge / Platinum Model (800-1,000 sq.ft • Confidential Fee)
                   </option>
                 </select>
               </div>
@@ -190,7 +190,7 @@ export default function FranchiseModal({ isOpen, onClose }) {
               </button>
 
               <div className="text-center text-[11px] text-baba-gray">
-                By submitting this form, you agree to receive official franchise communications from The Burger Baba Pvt. Ltd.
+                By submitting this form, you agree to receive official franchise communications from The Burger Baba.
               </div>
             </form>
           </div>
@@ -206,7 +206,7 @@ export default function FranchiseModal({ isOpen, onClose }) {
                 APPLICATION SUBMITTED SUCCESSFULLY!
               </h3>
               <p className="text-sm text-baba-gray max-w-md mx-auto">
-                Thank you, <strong className="text-baba-black">{formData.name}</strong>. Our franchise sales team led by Aarti Suthar will review your enquiry for <strong className="text-baba-orange">{formData.city}</strong> and reach out shortly.
+                Thank you, <strong className="text-baba-black">{formData.name}</strong>. Our franchise onboarding team will review your enquiry for <strong className="text-baba-orange">{formData.city}</strong> and reach out shortly.
               </p>
             </div>
 

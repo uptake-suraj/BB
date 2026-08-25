@@ -1,5 +1,5 @@
 export const CONTACT_INFO = {
-  companyName: 'The Burger Baba Pvt. Ltd.',
+  companyName: 'The Burger Baba',
   tagline: 'WE BELIEVE IN QUALITY',
   hqAddress: 'F-36, 37, Saket Business Hub, Opp. Domino\'s Pizza, Radhanpur Road, Mehsana, Gujarat 384002',
   phone: '+91 8866208063',
