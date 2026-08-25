@@ -3,24 +3,24 @@
 import React from 'react';
 import Image from 'next/image';
 
-export default function BrandLogo({ className = "w-10 h-10 sm:w-12 sm:h-12", showText = true, textLayout = "horizontal", darkText = false }) {
+export default function BrandLogo({ className = "w-12 h-12 sm:w-14 sm:h-14", showText = false, textLayout = "horizontal", darkText = false }) {
   return (
     <div className="flex items-center gap-2.5 sm:gap-3 group cursor-pointer">
-      {/* Mascot Logo Badge (Always visible on all screen sizes) */}
+      {/* Mascot Logo Badge (HD Circular Badge) */}
       <div className={`relative flex-shrink-0 ${className} transition-transform duration-300 group-hover:scale-105`}>
         <div className="relative w-full h-full rounded-full bg-white p-0.5 sm:p-1 shadow-[0_4px_15px_rgba(255,107,0,0.2)] border-2 border-baba-orange overflow-hidden flex items-center justify-center">
           <Image
             src="/official_logo.png"
             alt="The Burger Baba Official Logo"
-            width={180}
-            height={180}
+            width={240}
+            height={240}
             className="w-full h-full object-contain"
             priority
           />
         </div>
       </div>
 
-      {/* Brand Text & Tagline (Hidden on mobile screens, visible from sm: breakpoint up) */}
+      {/* Optional Side Text (Only rendered if showText is explicitly set to true) */}
       {showText && (
         <div className={`hidden sm:flex ${textLayout === "column" ? "flex-col" : "flex-col"}`}>
           <span className={`text-2xl md:text-3xl font-title font-normal tracking-wide uppercase leading-tight ${
