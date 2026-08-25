@@ -1,59 +1,18 @@
 'use client';
 
 import React, { useRef } from 'react';
-import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
+import { motion, useScroll, useSpring } from 'framer-motion';
+import { MILESTONES } from '@/data/about-data';
 import { Calendar, ShieldCheck, AlertTriangle, RefreshCw, Store, Rocket } from 'lucide-react';
 
-const MILESTONES = [
-  {
-    step: '01',
-    badge: '2020',
-    title: 'Brand Journey Begins',
-    description: 'Brand journey begins from a small cloud-kitchen setup.',
-    icon: Calendar,
-    color: 'border-baba-orange text-baba-orange bg-baba-orange/10',
-  },
-  {
-    step: '02',
-    badge: 'Early Stage',
-    title: 'Operating Processes',
-    description: 'Limited capital, limited experience and developing operating processes.',
-    icon: ShieldCheck,
-    color: 'border-amber-500 text-amber-500 bg-amber-500/10',
-  },
-  {
-    step: '03',
-    badge: 'Setbacks',
-    title: 'Resilience & Learning',
-    description: 'Two company outlets closed during the journey.',
-    icon: AlertTriangle,
-    color: 'border-rose-500 text-rose-500 bg-rose-500/10',
-  },
-  {
-    step: '04',
-    badge: 'Rebuild',
-    title: 'Systems & Focus',
-    description: 'Operations, product focus and systems were strengthened.',
-    icon: RefreshCw,
-    color: 'border-emerald-500 text-emerald-500 bg-emerald-500/10',
-  },
-  {
-    step: '05',
-    badge: 'Today',
-    title: '7 Outlets Operating',
-    description: '7-outlet network with 1 company-operated and 6 franchise-operated outlets.',
-    icon: Store,
-    color: 'border-baba-orange text-baba-orange bg-baba-orange/10',
-  },
-  {
-    step: '06',
-    badge: 'Next',
-    title: 'Scalable Platform',
-    description: 'Build a more structured, system-driven and scalable franchise platform.',
-    icon: Rocket,
-    color: 'border-indigo-500 text-indigo-500 bg-indigo-500/10',
-  },
-];
+const ICON_MAP = {
+  Calendar,
+  ShieldCheck,
+  AlertTriangle,
+  RefreshCw,
+  Store,
+  Rocket,
+};
 
 export default function JourneyPathTimeline() {
   const containerRef = useRef(null);
@@ -101,7 +60,7 @@ export default function JourneyPathTimeline() {
         {/* Milestone Cards Grid */}
         <div className="space-y-8 sm:space-y-12 relative z-10">
           {MILESTONES.map((item, index) => {
-            const IconComponent = item.icon;
+            const IconComponent = ICON_MAP[item.iconName] || Calendar;
             const isEven = index % 2 === 0;
 
             return (
