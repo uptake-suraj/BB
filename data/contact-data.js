@@ -10,6 +10,5 @@ export const CONTACT_INFO = {
   leadership: [
     { title: 'Founder & CEO', name: 'Manan Panchal' },
     { title: 'MD / Operations', name: 'Himanshu Goswami' },
-    { title: 'Sales Head', name: 'Aarti Suthar' },
   ],
 };

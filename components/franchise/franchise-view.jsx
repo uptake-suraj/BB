@@ -127,7 +127,7 @@ export default function FranchiseView() {
             SECURE YOUR <span className="text-baba-orange">CITY TERRITORY</span> TODAY
           </h3>
           <p className="text-xs sm:text-sm font-normal text-baba-gray max-w-xl mx-auto">
-            Speak directly with Aarti Suthar (Sales Head) and our franchise onboarding team to receive our full investment deck.
+            Speak directly with our franchise onboarding team to receive our full investment deck.
           </p>
           <button
             onClick={() => setModalOpen(true)}

@@ -61,11 +61,6 @@ export const LEADERS = [
     bio: 'Operational leadership, execution, store systems, SOP compliance, outlet performance monitoring, and franchise operational controls.',
   },
   {
-    name: 'AARTI SUTHAR',
-    role: 'Sales Head',
-    bio: 'Sales and franchise communication support, lead qualification, partner development, and investor onboarding.',
-  },
-  {
     name: 'VERNORA',
     role: 'Marketing Partner (Harshil Shah)',
     bio: 'External marketing company managing brand campaigns, social media content, local marketing guidance, and consumer demand.',
