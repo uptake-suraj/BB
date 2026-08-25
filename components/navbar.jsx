@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import BrandLogo from './brand-logo';
+import TypewriterText from '@/components/interactive/typewriter-text';
 import { Menu, X, PhoneCall, ChevronRight, Sparkles } from 'lucide-react';
 
 export default function Navbar({ onOpenFranchiseModal }) {
@@ -31,15 +32,14 @@ export default function Navbar({ onOpenFranchiseModal }) {
 
   return (
     <>
-      {/* Top Banner Alert Strip */}
+      {/* Top Header Strip with Animated Typewriter Tagline */}
       <div className="bg-baba-black text-white text-[11px] sm:text-xs py-2 px-3 sm:px-6 border-b border-baba-orange/30">
-        <div className="max-w-[1440px] mx-auto flex flex-wrap items-center justify-between gap-2 text-center sm:text-left">
+        <div className="max-w-[1440px] mx-auto flex items-center justify-between gap-2 text-center sm:text-left">
+          {/* Animated Typewriter Tagline: WE BELIEVE IN QUALITY */}
           <div className="flex items-center justify-center sm:justify-start gap-2 font-normal w-full sm:w-auto">
-            <span className="bg-baba-orange text-white font-semibold px-2 py-0.5 rounded-full text-[9px] sm:text-[10px] uppercase tracking-wider animate-pulse font-mono flex-shrink-0">
-              Expansion Notice
-            </span>
-            <span className="truncate max-w-[280px] sm:max-w-none">7 Outlets Live • Expanding Across India</span>
+            <TypewriterText text="WE BELIEVE IN QUALITY" />
           </div>
+
           <div className="hidden sm:flex items-center gap-3 font-mono text-gray-300 text-[11px]">
             <a href="tel:+918866208063" className="hover:text-baba-orange transition flex items-center gap-1 font-semibold">
               <PhoneCall className="w-3 h-3 text-baba-orange" /> +91 8866208063
@@ -50,7 +50,7 @@ export default function Navbar({ onOpenFranchiseModal }) {
         </div>
       </div>
 
-      {/* Main Navbar */}
+      {/* Main Sticky Navbar */}
       <header
         className={`sticky top-0 z-50 transition-all duration-300 ${
           scrolled
@@ -58,8 +58,8 @@ export default function Navbar({ onOpenFranchiseModal }) {
             : 'bg-white/85 backdrop-blur-md py-3 sm:py-4 border-b border-baba-border/60'
         }`}
       >
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Responsive Clean HD Brand Logo Only (No text side-by-side) */}
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between relative">
+          {/* Responsive Clean HD Brand Logo Only */}
           <Link href="/" className="flex items-center gap-2">
             <BrandLogo className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16" showText={false} />
           </Link>
