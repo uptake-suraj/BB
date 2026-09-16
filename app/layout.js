@@ -10,24 +10,47 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  metadataBase: new URL('https://theburgerbaba.com'),
-  title: 'The Burger Baba | Fast Food Franchise & Vegetarian QSR Opportunities',
+  metadataBase: new URL('https://theburgerbaba.in'),
+
+  title: {
+    default: 'The Burger Baba | Vegetarian QSR & Food Franchise',
+    template: '%s | The Burger Baba',
+  },
+
   description:
-    'Official Website of The Burger Baba. Explore high-ROI vegetarian QSR food franchise models (Silver, Gold, Platinum) with 100+ menu items.',
+    'The Burger Baba offers vegetarian QSR and food franchise opportunities across India. Explore our franchise models, menu, and business opportunities.',
+
   keywords: [
     'The Burger Baba',
+    'The Burger Baba Franchise',
     'Burger Franchise India',
+    'Vegetarian Food Franchise',
+    'QSR Franchise India',
     'QSR Franchise Gujarat',
-    'Food Franchise Mehsana',
-    'Fast Food Franchise Opportunity',
-    'Vegetarian QSR Franchise',
+    'Food Franchise Gujarat',
+    'Fast Food Franchise India',
   ],
+
   authors: [{ name: 'The Burger Baba' }],
+
+  alternates: {
+    canonical: 'https://theburgerbaba.in',
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+
   openGraph: {
-    title: 'The Burger Baba | Premium Vegetarian QSR Franchise',
+    title: 'The Burger Baba | Vegetarian QSR & Food Franchise',
     description:
-      'WE BELIEVE IN QUALITY. Expand your business with India’s fastest growing vegetarian burger and fast-food franchise.',
-    url: 'https://theburgerbaba.com',
+      'Explore The Burger Baba vegetarian QSR and food franchise opportunities across India.',
+    url: 'https://theburgerbaba.in',
     siteName: 'The Burger Baba',
     images: [
       {
@@ -37,8 +60,10 @@ export const metadata = {
         alt: 'The Burger Baba Official Logo',
       },
     ],
+    locale: 'en_IN',
     type: 'website',
   },
+
   icons: {
     icon: '/official_logo.png',
     shortcut: '/official_logo.png',
