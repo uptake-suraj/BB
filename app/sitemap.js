@@ -1,39 +1,48 @@
 export default function sitemap() {
+  const baseUrl = 'https://www.theburgerbaba.in';
+
   return [
     {
-      url: 'https://theburgerbaba.in',
+      url: baseUrl,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 1,
+      priority: 1.0,
     },
-
-    // Add your actual public pages here
     {
-      url: 'https://theburgerbaba.in/about',
+      url: `${baseUrl}/about`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
     },
-
     {
-      url: 'https://theburgerbaba.in/franchise',
+      url: `${baseUrl}/franchise`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.9,
     },
-
     {
-      url: 'https://theburgerbaba.in/menu',
+      url: `${baseUrl}/menu`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8,
     },
-
     {
-      url: 'https://theburgerbaba.in/contact',
+      url: `${baseUrl}/outlets`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/career`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/contact`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
     },
   ];
 }

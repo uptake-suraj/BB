@@ -10,7 +10,7 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  metadataBase: new URL('https://theburgerbaba.in'),
+  metadataBase: new URL('https://www.theburgerbaba.in'),
 
   title: {
     default: 'The Burger Baba | Vegetarian QSR & Food Franchise',
@@ -34,7 +34,7 @@ export const metadata = {
   authors: [{ name: 'The Burger Baba' }],
 
   alternates: {
-    canonical: 'https://theburgerbaba.in',
+    canonical: 'https://www.theburgerbaba.in',
   },
 
   robots: {
@@ -43,6 +43,8 @@ export const metadata = {
     googleBot: {
       index: true,
       follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
     },
   },
 
@@ -50,7 +52,7 @@ export const metadata = {
     title: 'The Burger Baba | Vegetarian QSR & Food Franchise',
     description:
       'Explore The Burger Baba vegetarian QSR and food franchise opportunities across India.',
-    url: 'https://theburgerbaba.in',
+    url: 'https://www.theburgerbaba.in',
     siteName: 'The Burger Baba',
     images: [
       {
