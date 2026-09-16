@@ -90,6 +90,62 @@ export default function SeoSchema() {
           },
         },
       },
+      {
+        '@type': 'BusinessEvent',
+        '@id': 'https://www.theburgerbaba.in/#franchise-event',
+        name: 'The Burger Baba Franchise Expansion',
+        description:
+          'Franchise investment opportunities in Gujarat, Rajasthan, Maharashtra and across India.',
+        startDate: '2026-01-01T09:00:00+05:30',
+        endDate: '2030-12-31T18:00:00+05:30',
+        eventStatus: 'https://schema.org/EventScheduled',
+        eventAttendanceMode: 'https://schema.org/MixedEventAttendanceMode',
+        image: 'https://www.theburgerbaba.in/official_logo.png',
+        location: [
+          {
+            '@type': 'Place',
+            name: 'The Burger Baba Corporate HQ',
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress:
+                'F-36, 37, Saket Business Hub, Opp. Domino’s Pizza, Radhanpur Road',
+              addressLocality: 'Mehsana',
+              addressRegion: 'Gujarat',
+              postalCode: '384002',
+              addressCountry: 'IN',
+            },
+          },
+          {
+            '@type': 'VirtualLocation',
+            url: 'https://www.theburgerbaba.in/franchise',
+          },
+        ],
+        organizer: {
+          '@type': 'Organization',
+          name: 'The Burger Baba',
+          url: 'https://www.theburgerbaba.in',
+        },
+        performer: {
+          '@type': 'Organization',
+          name: 'The Burger Baba Leadership Team',
+          url: 'https://www.theburgerbaba.in',
+        },
+        offers: {
+          '@type': 'Offer',
+          name: 'Franchise Investment Opportunity',
+          category: 'Franchise Business Opportunity',
+          priceCurrency: 'INR',
+          price: '0.00',
+          url: 'https://www.theburgerbaba.in/franchise',
+          availability: 'https://schema.org/InStock',
+          validFrom: '2020-01-01T00:00:00+05:30',
+          priceValidUntil: '2030-12-31T23:59:59+05:30',
+          seller: {
+            '@type': 'Organization',
+            name: 'The Burger Baba',
+          },
+        },
+      },
     ],
   };
 
