@@ -5,6 +5,6 @@ export default function robots() {
       allow: '/',
       disallow: ['/api/private/'],
     },
-    sitemap: 'https://theburgerbaba.com/sitemap.xml',
+    sitemap: 'https://www.theburgerbaba.in/sitemap.xml',
   };
 }
