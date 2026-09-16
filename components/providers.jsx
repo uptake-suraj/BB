@@ -14,10 +14,19 @@ export default function Providers({ children }) {
   return (
     <LenisProvider>
       <SplashScreen />
+
       <SeoSchema />
-      <Navbar onOpenFranchiseModal={() => setIsFranchiseModalOpen(true)} />
+
+      <Navbar
+        onOpenFranchiseModal={() => setIsFranchiseModalOpen(true)}
+      />
+
       <main className="flex-grow">{children}</main>
-      <Footer onOpenFranchiseModal={() => setIsFranchiseModalOpen(true)} />
+
+      <Footer
+        onOpenFranchiseModal={() => setIsFranchiseModalOpen(true)}
+      />
+
       <FranchiseModal
         isOpen={isFranchiseModalOpen}
         onClose={() => setIsFranchiseModalOpen(false)}

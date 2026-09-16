@@ -1,3 +1,7 @@
+'use client';
+
+import React from 'react';
+
 const schemaData = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -93,3 +97,14 @@ const schemaData = {
     },
   ],
 };
+
+export default function SeoSchema() {
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(schemaData),
+      }}
+    />
+  );
+}
