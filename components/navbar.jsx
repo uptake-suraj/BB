@@ -73,7 +73,7 @@ export default function Navbar({ onOpenFranchiseModal }) {
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between relative">
           {/* Responsive Clean HD Brand Logo Only */}
           <Link href="/" className="flex items-center gap-2">
-            <BrandLogo className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16" showText={false} />
+            <BrandLogo className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20" showText={false} />
           </Link>
 
           {/* Desktop Nav Links */}

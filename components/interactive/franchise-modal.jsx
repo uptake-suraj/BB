@@ -20,38 +20,51 @@ export default function FranchiseModal({ isOpen, onClose }) {
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
-    setTimeout(() => {
+    try {
+      await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...formData,
+          subject: 'Franchise Application (' + formData.model + ')',
+        }),
+      });
+    } catch (err) {
+      console.error('Error submitting application:', err);
+    } finally {
       setLoading(false);
       setSubmitted(true);
-    }, 1200);
+    }
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-baba-black/70 backdrop-blur-md animate-fadeIn">
-      <div className="relative w-full max-w-2xl bg-white border border-baba-border rounded-3xl p-6 sm:p-10 shadow-2xl overflow-hidden max-h-[90vh] overflow-y-auto text-baba-black">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-baba-black/70 backdrop-blur-md animate-fadeIn">
+      <div className="relative w-full max-w-2xl bg-white border border-baba-border rounded-3xl p-5 sm:p-10 shadow-2xl overflow-hidden max-h-[92vh] overflow-y-auto text-baba-black">
         {/* Background glow */}
         <div className="absolute top-0 right-0 w-48 h-48 bg-baba-orange/10 rounded-full blur-3xl pointer-events-none"></div>
 
-        {/* Close button */}
+        {/* Close button - adjusted z-index and padding to prevent text overlap */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 p-2.5 rounded-full bg-baba-lightgray border border-baba-border text-baba-gray hover:text-baba-black hover:bg-baba-border transition"
+          aria-label="Close Modal"
+          className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 p-2.5 rounded-full bg-baba-lightgray border border-baba-border text-baba-gray hover:text-baba-black hover:bg-baba-border transition shadow-sm"
         >
           <X className="w-5 h-5" />
         </button>
 
         {!submitted ? (
           <div>
-            <div className="space-y-2 mb-8">
+            {/* Header section with pr-12 padding on mobile so text never overlaps close button */}
+            <div className="space-y-2 mb-6 sm:mb-8 pr-12 sm:pr-14">
               <div className="flex items-center gap-2 text-baba-orange text-xs font-bold uppercase tracking-widest font-mono">
-                <Sparkles className="w-4 h-4" />
+                <Sparkles className="w-4 h-4 shrink-0" />
                 <span>Official Partner Application</span>
               </div>
-              <h3 className="text-3xl font-black text-baba-black font-title uppercase">
+              <h3 className="text-2xl sm:text-3xl font-black text-baba-black font-title uppercase leading-tight">
                 APPLY FOR <span className="text-baba-orange">THE BURGER BABA FRANCHISE</span>
               </h3>
               <p className="text-xs sm:text-sm text-baba-gray">
@@ -146,22 +159,6 @@ export default function FranchiseModal({ isOpen, onClose }) {
                 </select>
               </div>
 
-              {/* Investment Capacity */}
-              <div className="space-y-1.5">
-                <label className="text-xs font-bold text-baba-black flex items-center gap-1.5">
-                  <DollarSign className="w-3.5 h-3.5 text-baba-orange" /> Total Capital Ready For Investment *
-                </label>
-                <select
-                  value={formData.investment}
-                  onChange={(e) => setFormData({ ...formData, investment: e.target.value })}
-                  className="w-full bg-baba-bg border border-baba-border rounded-xl px-4 py-3 text-sm text-baba-black focus:outline-none focus:border-baba-orange font-medium"
-                >
-                  <option value="₹10L - ₹15L">₹10 Lakh – ₹15 Lakh</option>
-                  <option value="₹15L - ₹25L">₹15 Lakh – ₹25 Lakh</option>
-                  <option value="Above ₹25L">Above ₹25 Lakh (Multi-Unit Franchise)</option>
-                </select>
-              </div>
-
               {/* Message */}
               <div className="space-y-1.5">
                 <label className="text-xs font-bold text-baba-black">Additional Details / Questions</label>
@@ -177,13 +174,13 @@ export default function FranchiseModal({ isOpen, onClose }) {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-4 rounded-xl bg-baba-orange hover:bg-baba-orange-dark text-white font-black text-sm uppercase tracking-wider transition shadow-glow-orange flex items-center justify-center gap-2 font-title text-base"
+                className="w-full py-4 rounded-xl bg-baba-orange hover:bg-baba-orange-dark text-white font-black text-sm uppercase tracking-wider transition shadow-glow-orange flex items-center justify-center gap-3 font-title text-base"
               >
                 {loading ? (
                   <span>Submitting Application...</span>
                 ) : (
                   <>
-                    <Send className="w-4 h-4" />
+                    <Send className="w-5 h-5 shrink-0 mr-1.5" />
                     <span>Submit Franchise Application</span>
                   </>
                 )}

@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-export default function BrandLogo({ className = "w-12 h-12 sm:w-14 sm:h-14", showText = false, textLayout = "horizontal", darkText = false }) {
+export default function BrandLogo({ className = "w-14 h-14 sm:w-16 sm:h-16", showText = false, textLayout = "horizontal", darkText = false }) {
   return (
     <div className="flex items-center gap-2.5 sm:gap-3 group cursor-pointer">
       {/* Mascot Logo Badge (Uncompressed Crisp HD Circular Badge) */}

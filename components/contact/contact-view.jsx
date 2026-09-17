@@ -8,6 +8,7 @@ import { Phone, Mail, MapPin, Instagram, Sparkles, Send, CheckCircle2, Clock } f
 export default function ContactView() {
   const [modalOpen, setModalOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -17,9 +18,22 @@ export default function ContactView() {
     message: '',
   });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+
+    try {
+      await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+    } catch (err) {
+      console.error('Error sending message:', err);
+    } finally {
+      setLoading(false);
+      setSubmitted(true);
+    }
   };
 
   return (
@@ -202,10 +216,17 @@ export default function ContactView() {
 
                 <button
                   type="submit"
-                  className="w-full py-4 rounded-2xl bg-baba-orange hover:bg-baba-orange-dark text-white font-semibold text-xs uppercase tracking-wider transition shadow-glow-orange flex items-center justify-center gap-2 font-sans"
+                  disabled={loading}
+                  className="w-full py-4 rounded-2xl bg-baba-orange hover:bg-baba-orange-dark text-white font-semibold text-xs uppercase tracking-wider transition shadow-glow-orange flex items-center justify-center gap-3 font-sans"
                 >
-                  <Send className="w-4 h-4" />
-                  <span>Submit Inquiry Message</span>
+                  {loading ? (
+                    <span>Submitting Message...</span>
+                  ) : (
+                    <>
+                      <Send className="w-5 h-5 shrink-0 mr-1.5" />
+                      <span>Submit Inquiry Message</span>
+                    </>
+                  )}
                 </button>
               </form>
             )}

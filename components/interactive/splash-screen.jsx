@@ -15,7 +15,7 @@ export default function SplashScreen() {
         setIsVisible(true);
 
         const startTime = Date.now();
-        const duration = 1900; // Increased splash time (~1.9s) for smooth 1% to 100% progress line
+        const duration = 600; // Decreased splash timer duration (~0.6s) for fast initial page loading
 
         const interval = setInterval(() => {
           const elapsed = Date.now() - startTime;
