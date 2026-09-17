@@ -34,7 +34,7 @@ export const metadata = {
   authors: [{ name: 'The Burger Baba' }],
 
   alternates: {
-    canonical: 'https://www.theburgerbaba.in',
+    canonical: './',
   },
 
   robots: {
@@ -67,10 +67,18 @@ export const metadata = {
   },
 
   icons: {
-    icon: '/official_logo.png',
-    shortcut: '/official_logo.png',
-    apple: '/official_logo.png',
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-32x32.png', type: 'image/png', sizes: '32x32' },
+      { url: '/favicon-48x48.png', type: 'image/png', sizes: '48x48' },
+      { url: '/android-chrome-192x192.png', type: 'image/png', sizes: '192x192' },
+      { url: '/android-chrome-512x512.png', type: 'image/png', sizes: '512x512' },
+    ],
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
   },
+
+  manifest: '/site.webmanifest',
 };
 
 export default function RootLayout({ children }) {

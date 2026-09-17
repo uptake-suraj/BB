@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://theburgerbaba.in/sitemap.xml
+Sitemap: https://www.theburgerbaba.in/sitemap.xml

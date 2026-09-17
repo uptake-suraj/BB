@@ -39,6 +39,17 @@ const schemaData = {
     },
 
     {
+      '@type': 'WebSite',
+      '@id': 'https://www.theburgerbaba.in/#website',
+      url: 'https://www.theburgerbaba.in',
+      name: 'The Burger Baba',
+      alternateName: ['Burger Baba', 'TheBurgerBaba', 'The Burger Baba Franchise'],
+      publisher: {
+        '@id': 'https://www.theburgerbaba.in/#organization',
+      },
+    },
+
+    {
       '@type': 'FastFoodRestaurant',
       '@id': 'https://www.theburgerbaba.in/#restaurant',
       name: 'THE BURGER BABA',
